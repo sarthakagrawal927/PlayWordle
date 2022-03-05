@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"strings"
 )
 
@@ -58,16 +59,32 @@ func getMostProbableWord() string {
 	return mpWord
 }
 
-func play(arr []playObject) {
+func playMoves(arr []playObject) {
 	for _, obj := range arr {
-		switch obj.color {
-		case "Y":
-			handleYellow(obj.char, obj.pos)
-		case "B":
-			handleBlack(obj.char)
-		case "G":
-			handleGreen(obj.char, obj.pos)
-		default:
-		}
+		playSingleMove(obj)
 	}
+}
+
+func playSingleMove(obj playObject) {
+	switch obj.color {
+	case "Y":
+		handleYellow(obj.char, obj.pos)
+	case "B":
+		handleBlack(obj.char)
+	case "G":
+		handleGreen(obj.char, obj.pos)
+	default:
+	}
+}
+
+func makePlayObject(word string, colors string) []playObject {
+	fmt.Println(word, colors)
+	moves := []playObject{}
+	if colors == "WIN" {
+		return moves
+	}
+	for idx, _ := range word {
+		moves = append(moves, playObject{idx, string(word[idx]), string(colors[idx])})
+	}
+	return moves
 }

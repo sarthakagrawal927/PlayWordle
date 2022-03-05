@@ -1,19 +1,30 @@
 package main
 
 import (
+	"bufio"
 	"fmt"
+	"os"
+	"strings"
 )
 
 func main() {
 	findAlphabetsFrequency()
-	fmt.Println(getMostProbableWord())
-	moves := []playObject{ //pos,char,color
-		{0, "A", "B"},
-		{1, "R", "B"},
-		{2, "O", "B"},
-		{3, "S", "Y"},
-		{4, "E", "G"},
+
+	var status string
+	var currWord string
+	reader := bufio.NewReader(os.Stdin)
+
+	for status != "WIN" {
+		currWord = getMostProbableWord()
+		fmt.Println(currWord, len(currentWords))
+		input, err := reader.ReadString('\n')
+		if err != nil {
+			fmt.Println("An error occurred while reading input. Please try again", err)
+			return
+		}
+		status = strings.ToUpper(strings.TrimSuffix(input, "\n"))
+		moves := makePlayObject(currWord, status)
+		playMoves(moves)
 	}
-	play(moves)
-	fmt.Println(getMostProbableWord())
+
 }
