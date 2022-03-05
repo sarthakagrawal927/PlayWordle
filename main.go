@@ -10,12 +10,13 @@ import (
 func main() {
 	findAlphabetsFrequency()
 
+	// Code to play the game
 	var status string
 	var currWord string
 	reader := bufio.NewReader(os.Stdin)
-
+	currWordCount := int(0)
 	for status != "WIN" {
-		currWord = getMostProbableWord()
+		currWord = getMostProbableWord(currWordCount)
 		fmt.Println(currWord, len(currentWords))
 		input, err := reader.ReadString('\n')
 		if err != nil {
@@ -24,7 +25,10 @@ func main() {
 		}
 		status = strings.ToUpper(strings.TrimSuffix(input, "\n"))
 		moves := makePlayObject(currWord, status)
+		currWordCount += 1
 		playMoves(moves)
 	}
 
+	// Code to simulate the game
+	// simulateForAll()
 }

@@ -38,6 +38,9 @@ Wordle 259 5/6
 
 For such situations one possible solution, once we have multiple final letters - we can try to eliminate the most common letters by using an entirely different word made with non selected characters.
 
+Has failed for similar situation, so solution is needed. Try to fix 2 starting words maybe ?
+Will it effect success probability ? will it increase/decrease the number of attempts ?
+
 Playing archives from [here](https://metzger.media/games/wordle-archive/)
 
 ### TC#2 - MOURN - 03/03
@@ -103,3 +106,5 @@ Playing archives from [here](https://metzger.media/games/wordle-archive/)
 🟩🟩🟩🟩🟩
 
 So the algorithm for playing the game is definitely a success, let's see how much optimization can be done.
+
+Let us simulate for different types of algorithms

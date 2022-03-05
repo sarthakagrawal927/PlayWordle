@@ -1,7 +1,6 @@
 package main
 
 import (
-	"fmt"
 	"strings"
 )
 
@@ -45,7 +44,10 @@ func handleGreen(s string, pos int) {
 	currentWords = currentWords[:n]
 }
 
-func getMostProbableWord() string {
+func getMostProbableWord(currWordCount int) string {
+	if currWordCount == 1 { // complete alternate of the first word
+		return "UNLIT"
+	}
 	var mpWord string
 	max_power := int(0)
 	power := int(0)
@@ -78,7 +80,7 @@ func playSingleMove(obj playObject) {
 }
 
 func makePlayObject(word string, colors string) []playObject {
-	fmt.Println(word, colors)
+	// fmt.Println(word, colors)
 	moves := []playObject{}
 	if colors == "WIN" {
 		return moves
