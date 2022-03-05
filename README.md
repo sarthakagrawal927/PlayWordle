@@ -23,9 +23,13 @@ Hopefully ready for use
 Wordle 259 5/6
 
 ⬛🟩⬛⬛🟩
+
 ⬛🟩🟩🟩🟩
+
 ⬛🟩🟩🟩🟩
+
 ⬛🟩🟩🟩🟩
+
 🟩🟩🟩🟩🟩
 
 For such situations one possible solution, once we have multiple final letters - we can try to eliminate the most common letters by using an entirely different word made with non selected characters.
