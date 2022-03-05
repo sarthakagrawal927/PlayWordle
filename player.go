@@ -1,0 +1,54 @@
+package main
+
+import (
+	"strings"
+)
+
+func getCurrentWords() words {
+	return currentWords
+}
+
+// black character - letter does not exists in our word
+func handleBlack(s string) {
+	var n int = 0
+	for _, val := range currentWords {
+		if strings.Contains(string(val), s) {
+			currentWords[n] = val
+			n++
+		}
+	}
+	currentWords = currentWords[:n]
+}
+
+// yellow character - letter exists, but not at the current position
+func handleYellow(s string, pos int) {
+	var n int = 0
+	for _, val := range currentWords {
+		if strings.Contains(string(val), s) && string(val[pos]) != s {
+			currentWords[n] = val
+			n++
+		}
+	}
+	currentWords = currentWords[:n]
+}
+
+// green character - letter exists, at current position (or more)
+func handleGreen(s string, pos int) {
+	var n int = 0
+	for _, val := range currentWords {
+		if string(val[pos]) == s {
+			currentWords[n] = val
+			n++
+		}
+	}
+	currentWords = currentWords[:n]
+}
+
+func getMostProbableWord() string {
+	var mpWord string
+	power := int(0)
+	for _, word := range currentWords {
+
+	}
+	return mpWord
+}
