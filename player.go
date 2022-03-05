@@ -12,7 +12,7 @@ func getCurrentWords() words {
 func handleBlack(s string) {
 	var n int = 0
 	for _, val := range currentWords {
-		if strings.Contains(string(val), s) {
+		if !strings.Contains(string(val), s) {
 			currentWords[n] = val
 			n++
 		}
@@ -46,9 +46,14 @@ func handleGreen(s string, pos int) {
 
 func getMostProbableWord() string {
 	var mpWord string
+	max_power := int(0)
 	power := int(0)
 	for _, word := range currentWords {
-
+		power = getWordPower(word)
+		if power > max_power {
+			max_power = power
+			mpWord = word
+		}
 	}
 	return mpWord
 }
