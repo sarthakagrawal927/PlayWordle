@@ -5,22 +5,15 @@ import (
 )
 
 func main() {
-	// var currentWords words = getCurrentWords()
-	// handleBlack("a")
-	// handleYellow("b", 0)
 	findAlphabetsFrequency()
 	fmt.Println(getMostProbableWord())
-	handleBlack("A")
-	handleBlack("O")
-	handleBlack("S")
-	handleGreen("R", 1)
-	handleGreen("E", 4)
-	fmt.Println(currentWords)
-	handleBlack("T")
-	handleGreen("I", 2)
-	handleGreen("N", 3)
-	fmt.Println(currentWords)
-	handleBlack("U")
-
+	moves := []playObject{ //pos,char,color
+		{0, "A", "B"},
+		{1, "R", "B"},
+		{2, "O", "B"},
+		{3, "S", "Y"},
+		{4, "E", "G"},
+	}
+	play(moves)
 	fmt.Println(getMostProbableWord())
 }

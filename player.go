@@ -57,3 +57,17 @@ func getMostProbableWord() string {
 	}
 	return mpWord
 }
+
+func play(arr []playObject) {
+	for _, obj := range arr {
+		switch obj.color {
+		case "Y":
+			handleYellow(obj.char, obj.pos)
+		case "B":
+			handleBlack(obj.char)
+		case "G":
+			handleGreen(obj.char, obj.pos)
+		default:
+		}
+	}
+}

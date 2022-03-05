@@ -1,7 +1,5 @@
 package main
 
-type words []string
-
 var wordList words = []string{
 	"AAHED",
 	"AALII",
