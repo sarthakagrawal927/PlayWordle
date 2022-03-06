@@ -107,4 +107,10 @@ Playing archives from [here](https://metzger.media/games/wordle-archive/)
 
 So the algorithm for playing the game is definitely a success, let's see how much optimization can be done.
 
-Let us simulate for different types of algorithms
+Let us simulate for different types of algorithms - not working, due to some memory leak or something
+
+To improve the most probable word, maybe we can can boost the word power of more common words ?
+
+Can advance the algorithm by adding special considerations for words with repeating characters, but got bored.
+
+PS. Unable to figure out the issue with simulate function, will try again later.

@@ -10,7 +10,7 @@ func getCurrentWords() words {
 
 // black character - letter does not exists in our word
 func handleBlack(s string) {
-	var n int = 0
+	n := 0
 	for _, val := range currentWords {
 		if !strings.Contains(string(val), s) {
 			currentWords[n] = val
@@ -22,7 +22,7 @@ func handleBlack(s string) {
 
 // yellow character - letter exists, but not at the current position
 func handleYellow(s string, pos int) {
-	var n int = 0
+	n := 0
 	for _, val := range currentWords {
 		if strings.Contains(string(val), s) && string(val[pos]) != s {
 			currentWords[n] = val
@@ -34,7 +34,7 @@ func handleYellow(s string, pos int) {
 
 // green character - letter exists, at current position (or more)
 func handleGreen(s string, pos int) {
-	var n int = 0
+	n := 0
 	for _, val := range currentWords {
 		if string(val[pos]) == s {
 			currentWords[n] = val
@@ -48,7 +48,7 @@ func getMostProbableWord(currWordCount int) string {
 	if currWordCount == 1 { // complete alternate of the first word
 		return "UNLIT"
 	}
-	var mpWord string
+	mpWord := ""
 	max_power := int(0)
 	power := int(0)
 	for _, word := range currentWords {

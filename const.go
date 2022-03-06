@@ -12482,4 +12482,3 @@ var wordList words = []string{
 }
 
 var currentWords words = wordList
-var sortedWords words = wordList
