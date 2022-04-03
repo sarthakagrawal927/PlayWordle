@@ -114,3 +114,5 @@ To improve the most probable word, maybe we can can boost the word power of more
 Can advance the algorithm by adding special considerations for words with repeating characters, but got bored.
 
 PS. Unable to figure out the issue with simulate function, will try again later.
+
+Simulate function now works, works for 96% of the cases, with average number of moves = 3.

@@ -45,7 +45,8 @@ func handleGreen(s string, pos int) {
 }
 
 func getMostProbableWord(currWordCount int) string {
-	if currWordCount == 1 { // complete alternate of the first word
+	// complete alternate of the first word
+	if currWordCount == 1 {
 		return "UNLIT"
 	}
 	mpWord := ""
@@ -85,7 +86,7 @@ func makePlayObject(word string, colors string) []playObject {
 	if colors == "WIN" {
 		return moves
 	}
-	for idx, _ := range word {
+	for idx := range word {
 		moves = append(moves, playObject{idx, string(word[idx]), string(colors[idx])})
 	}
 	return moves

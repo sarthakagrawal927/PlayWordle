@@ -12481,4 +12481,4 @@ var wordList words = []string{
 	"ZYMIC",
 }
 
-var currentWords words = wordList
+var currentWords words = make([]string, len(wordList))

@@ -13,6 +13,7 @@ func main() {
 	var currWord string
 	reader := bufio.NewReader(os.Stdin)
 	currWordCount := int(0)
+	copy(currentWords, wordList)
 	for status != "WIN" {
 		findAlphabetsFrequency()
 		currWord = getMostProbableWord(currWordCount)
@@ -30,7 +31,10 @@ func main() {
 
 	// Code to simulate the game
 	// findAlphabetsFrequency()
-	// fmt.Println(simulate("ADDED"))
-	// fmt.Println(simulate("CRATE"))
+	// fmt.Println(simulate("APPLE"), len(currentWords), len(wordList))
+	// fmt.Println(simulate("ADZED"), len(currentWords), len(wordList))
+	// fmt.Println(simulate("HEVEA"), len(currentWords), len(wordList))
+	// fmt.Println(simulate("YRIVD"), len(currentWords), len(wordList))
+
 	// simulateForAll()
 }
