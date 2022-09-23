@@ -8,19 +8,14 @@ go run *.go
 
 To play, you will get the first word, then you can write the colors in command line (for eg. YYGGB ), then it will provide you with the next word. Write "WIN" in command line to exit after victory ;)
 
-## The game
+## The Metrics (PEAK)
 
-Yet to be build
-
-## The helper
-
-[helper.go](helper.go) - has functions to initialize the game and to run on every new word tried
-
-## The Player
-
-[player.go](player.go) - has functions to be used by the player to get the most probable word
-
-Hopefully ready for use
+```
+Success Percentage 94.56643692899503
+Average Win moves: 3.5072033898305084
+Average Loss moves: 7.961651917404129
+Time taken per word 2.087277505048886 ms
+```
 
 ### TC#1 - BRINE - 05/03
 
@@ -105,14 +100,5 @@ Playing archives from [here](https://metzger.media/games/wordle-archive/)
 
 🟩🟩🟩🟩🟩
 
-So the algorithm for playing the game is definitely a success, let's see how much optimization can be done.
+Can advance the algorithm by adding ways to deal with similar words.
 
-Let us simulate for different types of algorithms - not working, due to some memory leak or something
-
-To improve the most probable word, maybe we can can boost the word power of more common words ?
-
-Can advance the algorithm by adding special considerations for words with repeating characters, but got bored.
-
-PS. Unable to figure out the issue with simulate function, will try again later.
-
-Simulate function now works, works for 96% of the cases, with average number of moves = 3.

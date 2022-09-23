@@ -1,12 +1,9 @@
 package main
 
 import (
+	"fmt"
 	"strings"
 )
-
-func getCurrentWords() words {
-	return currentWords
-}
 
 // black character - letter does not exists in our word
 func handleBlack(s string) {
@@ -44,20 +41,24 @@ func handleGreen(s string, pos int) {
 	currentWords = currentWords[:n]
 }
 
+// main logic
 func getMostProbableWord(currWordCount int) string {
 	// complete alternate of the first word
 	if currWordCount == 1 {
 		return "UNLIT"
 	}
 	mpWord := ""
-	max_power := int(0)
-	power := int(0)
+	max_power := float32(0)
+	power := float32(0)
 	for _, word := range currentWords {
 		power = getWordPower(word)
 		if power > max_power {
 			max_power = power
 			mpWord = word
 		}
+	}
+	if showDebug {
+		fmt.Println(characterCountMap, mpWord, max_power, currWordCount)
 	}
 	return mpWord
 }
@@ -81,7 +82,6 @@ func playSingleMove(obj playObject) {
 }
 
 func makePlayObject(word string, colors string) []playObject {
-	// fmt.Println(word, colors)
 	moves := []playObject{}
 	if colors == "WIN" {
 		return moves

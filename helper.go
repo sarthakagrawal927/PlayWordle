@@ -1,9 +1,9 @@
 package main
 
-var characterCountMap map[string]int
+var characterCountMap map[rune]float32
 
 func findAlphabetsFrequency() {
-	characterCountMap = make(map[string]int)
+	characterCountMap = make(map[rune]float32)
 	for _, val := range currentWords {
 		addWordToFreq(val)
 	}
@@ -11,27 +11,23 @@ func findAlphabetsFrequency() {
 
 func addWordToFreq(s string) {
 	// if a word contains the same character twice, I am counting it only once
-	mapCheck := make(map[string]bool)
+	mapCheck := make(map[rune]bool)
 	for _, c := range s {
-		if mapCheck[string(c)] != true {
-			if characterCountMap[string(c)] == 0 {
-				characterCountMap[string(c)] = 1
-			} else {
-				characterCountMap[string(c)] += 1
-			}
+		if !mapCheck[c] {
+			characterCountMap[c] += 1
+			mapCheck[c] = true
 		}
-		mapCheck[string(c)] = true
 	}
 }
 
-func getWordPower(s string) int {
-	power := int(0)
-	mapCheck := make(map[string]bool)
+func getWordPower(s string) float32 {
+	power := float32(0)
+	mapCheck := make(map[rune]bool)
 	for _, c := range s {
-		if mapCheck[string(c)] != true {
-			power += characterCountMap[string(c)]
+		if !mapCheck[c] {
+			power += characterCountMap[c]
+			mapCheck[c] = true
 		}
-		mapCheck[string(c)] = true
 	}
 	return power
 }
