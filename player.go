@@ -60,6 +60,9 @@ func getMostProbableWord(currWordCount int) string {
 	if showDebug {
 		fmt.Println(characterCountMap, mpWord, max_power, currWordCount)
 	}
+	if len(currentWords) <= 10 {
+		fmt.Println("Other possible words are", currentWords)
+	}
 	return mpWord
 }
 
